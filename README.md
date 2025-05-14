@@ -47,7 +47,25 @@ JWT_SECRET=YourSecretKey
 
 Sesuaikan konfigurasi database (`DB_USER`, `DB_PASS`) dengan pengaturan MySQL lokal Anda.
 
-### 4. Menjalankan Aplikasi
+### 4. Menjalankan Migrasi Database
+
+Untuk menjalankan migrasi database, Anda dapat menjalankan aplikasi dengan fitur auto-migrate dari GORM:
+
+```bash
+# Pastikan konfigurasi database sudah benar di file .env
+go run main.go
+```
+
+Jika Anda memiliki file migrasi terpisah, jalankan:
+
+```bash
+# Jika Anda memiliki file migrasi khusus
+go run database/migration.go
+```
+
+Ini akan membuat tabel-tabel yang dibutuhkan di database berdasarkan model yang telah didefinisikan.
+
+### 5. Menjalankan Aplikasi
 
 Jalankan aplikasi dengan perintah:
 
